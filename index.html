@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Compatibilidad adicional al abrir el informe desde disco o servidores antiguos. -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informe Mensual – GMMMC | Musicala</title>
+
+  <!-- Fuentes institucionales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="print.css" media="print" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER INSTITUCIONAL (sin impresión)
+  ════════════════════════════════════════════════════════ -->
+  <header class="site-header site-header-fsa">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-brand header-brand-fsa">
+          <img src="Encabezado FSA.PNG" alt="Encabezado oficial FSA" class="header-fsa-img" />
+        </div>
+
+        <!-- Badges dinámicos (se ocultan en esta versión) -->
+        <div id="header-info" class="header-info-hidden"></div>
+
+        <div class="header-actions">
+          <button class="btn-print" id="btn-imprimir">
+            Descargar Informe en PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+  ════════════════════════════════════════════════════════ -->
+  <main>
+    <div class="container">
+
+      <!-- ── FRANJA DE MARCA / ALIANZA ──────────────────────── -->
+      <div class="brand-strip">
+        <img src="Logo San Antonio.PNG" alt="Fundación San Antonio" class="brand-logo" />
+        <span class="brand-strip-label">Alianza Fundación San Antonio · Musicala</span>
+        <img src="Logo Musicala.png" alt="Musicala" class="brand-logo brand-logo-mus" />
+      </div>
+
+      <!-- ── 1. PORTADA EJECUTIVA ───────────────────────────── -->
+      <div id="portada" class="seccion-portada"></div>
+
+      <!-- ── 2. RESUMEN EJECUTIVO ───────────────────────────── -->
+      <section class="seccion" id="sec-resumen">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">📝</span> Resumen ejecutivo
+        </h2>
+        <p id="resumen-texto"></p>
+      </section>
+
+      <!-- ── 3. INDICADORES PRINCIPALES ────────────────────── -->
+      <section class="seccion" id="sec-indicadores">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">📊</span> Indicadores principales
+        </h2>
+        <div id="indicadores-grid"></div>
+        <div id="indicadores-contexto" aria-label="Contexto de los indicadores"></div>
+      </section>
+
+      <!-- ── 4. DESARROLLO PEDAGÓGICO DEL MES ──────────────── -->
+      <section class="seccion" id="sec-desarrollo">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">🎯</span> Desarrollo pedagógico del mes
+        </h2>
+        <div id="fase-actual"></div>
+      </section>
+
+      <!-- ── 5. PROCESO POR ÁREAS ───────────────────────────── -->
+      <section class="seccion" id="sec-areas">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">🎭</span> Proceso por áreas
+        </h2>
+        <div id="areas-container"></div>
+      </section>
+
+      <!-- ── 6. AVANCES Y RETROCESOS GENERALES ─────────────── -->
+      <section class="seccion" id="sec-avances">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">⚡</span> Avances y retos del mes
+        </h2>
+        <div class="avances-retos-grid">
+          <div class="avances-col">
+            <p class="col-titulo">✦ Avances generales</p>
+            <ul id="avances-lista"></ul>
+          </div>
+          <div class="retos-col">
+            <p class="col-titulo">▲ Retos y retrocesos</p>
+            <ul id="retos-lista"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 7. NOVEDADES RELEVANTES ───────────────────────── -->
+      <section class="seccion" id="sec-novedades">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">◆</span> Novedades relevantes
+        </h2>
+        <ul id="novedades-lista"></ul>
+      </section>
+
+      <!-- ── 8. CUMPLIMIENTO DE HORARIOS ───────────────────── -->
+      <section class="seccion" id="sec-horarios">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">⏱</span> Cumplimiento de horarios y equipo
+        </h2>
+        <div id="horarios-contenido"></div>
+      </section>
+
+      <!-- ── 9. TABLERO EXTERNO (se oculta si no hay URL) ───── -->
+      <section class="seccion" id="seccion-tablero" style="display:none;">
+        <h2 class="seccion-titulo" id="tablero-titulo">
+          <span class="seccion-icono">📈</span> Tablero de seguimiento
+        </h2>
+        <div class="tablero-iframe-wrap">
+          <iframe id="tablero-iframe" title="Tablero de seguimiento" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ── 10. EVIDENCIAS DEL MES ─────────────────────────── -->
+      <section class="seccion" id="sec-evidencias">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">🖼</span> Evidencias del mes
+        </h2>
+        <div id="evidencias-grid"></div>
+      </section>
+
+      <!-- ── 11. RECOMENDACIONES ────────────────────────────── -->
+      <section class="seccion" id="sec-recomendaciones">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">💡</span> Recomendaciones para el siguiente mes
+        </h2>
+        <ul id="recomendaciones-lista"></ul>
+      </section>
+
+      <!-- ── 12. COMENTARIOS FINALES ───────────────────────── -->
+      <section class="seccion" id="sec-comentarios">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">💬</span> Comentarios finales
+        </h2>
+        <p id="comentarios-texto"></p>
+      </section>
+
+      <!-- ── 13. APROBACIÓN Y FIRMAS ───────────────────────── -->
+      <section class="seccion" id="sec-firmas">
+        <h2 class="seccion-titulo">
+          <span class="seccion-icono">✍</span> Aprobación y firmas
+        </h2>
+        <div id="firmas-grid"></div>
+      </section>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <strong>Musicala SAS</strong> · Informe mensual de gestión · GMMMC
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PANEL CHECKLIST (modal, oculto por defecto)
+  ════════════════════════════════════════════════════════ -->
+  <div id="checklist-panel" role="dialog" aria-modal="true" aria-label="Verificación del informe">
+    <!-- Contenido inyectado por script.js -->
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+       Orden importante: datos primero, luego lógica
+  ════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════
+       MODAL GALERÍA DE FOTOS (Firebase + login, NO se imprime)
+  ════════════════════════════════════════════════════════ -->
+  <div id="fotos-modal" class="fotos-modal" aria-hidden="true">
+    <div class="fotos-modal-backdrop" data-close></div>
+    <div class="fotos-modal-box" role="dialog" aria-modal="true" aria-label="Galería de fotos del mes">
+      <div class="fotos-modal-head">
+        <h3 class="fotos-modal-title">📸 Galería de fotos del mes</h3>
+        <button class="fotos-modal-close" data-close type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div id="fb-auth-bar" class="fb-auth-bar"></div>
+      <div id="fb-gallery" class="fb-gallery"></div>
+    </div>
+  </div>
+
+  <script src="data/informe-data.js"></script>
+  <script src="script.js"></script>
+  <script type="module" src="firebase-gallery.js"></script>
+
+</body>
+</html>

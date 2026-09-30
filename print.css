@@ -1,0 +1,215 @@
+/* ============================================================
+   INFORME MENSUAL – MUSICALA / GMMMC
+   print.css – Estilos de impresión / exportar PDF
+   ============================================================ */
+
+@media print {
+
+  /* ── Página ─────────────────────────────────────────────── */
+  @page {
+    size: letter;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html, body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10.5pt;
+    color: #111;
+  }
+
+  /* ── Ocultar UI (botones, modal de fotos, etc.) ─────────── */
+  .header-actions,
+  .header-info-hidden,
+  .site-footer,
+  #checklist-panel,
+  .btn-print,
+  #fotos-modal,
+  .evidencia-galeria-btn {
+    display: none !important;
+  }
+
+  /* ── Contenedores sin relleno extra ─────────────────────── */
+  .container { max-width: 100% !important; padding: 0 !important; }
+  main { padding: 0 !important; }
+
+  /* ── ENCABEZADO FSA (membrete) SIEMPRE ARRIBA ───────────── */
+  .site-header,
+  .site-header-fsa {
+    position: static !important;
+    background: #fff !important;
+    padding: 0 !important;
+    margin: 0 0 8pt !important;
+  }
+  .header-inner { display: block !important; }
+  .header-brand-fsa { display: block !important; }
+  .header-fsa-img {
+    width: 100% !important;
+    height: auto !important;
+    border: none !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  /* ── Franja de marca / alianza ──────────────────────────── */
+  .brand-strip {
+    border: 1pt solid #bbb !important;
+    border-radius: 5pt !important;
+    padding: 5pt 12pt !important;
+    margin: 0 0 10pt !important;
+    background: #fff !important;
+    break-inside: avoid;
+  }
+  .brand-logo     { height: 30pt !important; }
+  .brand-logo-mus { height: 24pt !important; }
+  .brand-strip-label { font-size: 7.5pt !important; color: #4E2A7A !important; }
+
+  /* ── Portada (carátula) compacta ────────────────────────── */
+  #portada {
+    background: #4E2A7A !important;
+    color: #fff !important;
+    border-radius: 6pt !important;
+    padding: 14pt 18pt !important;
+    margin: 0 0 10pt !important;
+    overflow: visible !important;
+  }
+  #portada::before, #portada::after { display: none !important; }
+  .portada-mes  { font-size: 26pt !important; color: #fff !important; line-height: 1 !important; }
+  .portada-anio { color: rgba(255,255,255,.75) !important; font-size: 11pt !important; margin-bottom: 10pt !important; }
+  .portada-info { gap: 7pt !important; }
+  .portada-tag {
+    background: rgba(255,255,255,.12) !important;
+    border: 1pt solid rgba(255,255,255,.25) !important;
+    border-radius: 4pt !important;
+    padding: 5pt 9pt !important;
+  }
+  .portada-tag .label { color: rgba(255,255,255,.7) !important; font-size: 6.5pt !important; }
+  .portada-tag .value { color: #fff !important; font-size: 8.5pt !important; }
+
+  /* ── Secciones ──────────────────────────────────────────── */
+  .seccion {
+    border: 1pt solid #d8d2e6 !important;
+    border-radius: 5pt !important;
+    padding: 10pt 12pt !important;
+    margin-bottom: 8pt !important;
+    background: #fff !important;
+  }
+  /* El título no se queda solo al final de una página */
+  .seccion-titulo { break-after: avoid; }
+  .seccion-titulo {
+    font-size: 11.5pt !important;
+    color: #4E2A7A !important;
+    border-bottom: 1pt solid #E0D8EC !important;
+    padding-bottom: 4pt !important;
+    margin-bottom: 8pt !important;
+  }
+  p { line-height: 1.45 !important; }
+
+  /* ── Resumen ────────────────────────────────────────────── */
+  #resumen-texto {
+    background: #F5EEFF !important;
+    border-left: 3pt solid #6B3FA0 !important;
+    padding: 8pt 10pt !important;
+    font-size: 10pt !important;
+    border-radius: 0 4pt 4pt 0 !important;
+  }
+
+  /* ── Indicadores ────────────────────────────────────────── */
+  #indicadores-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6pt !important;
+  }
+  .indicador-card { padding: 8pt 6pt !important; border-radius: 5pt !important; border: 1pt solid #ccc !important; }
+  .indicador-valor    { font-size: 15pt !important; }
+  .indicador-etiqueta { font-size: 6.5pt !important; }
+  .barra-wrap { height: 3pt !important; }
+  .indicador-neutral { background: #F3F0F8 !important; }
+  .indicador-success, .indicador-green { background: #E6F8F1 !important; }
+  .indicador-yellow { background: #FEF6E6 !important; }
+  .indicador-red    { background: #FDECEE !important; }
+  .indicador-info   { background: #E6F4FB !important; }
+  .barra-green { background: #2EAA71 !important; }
+  .barra-yellow { background: #E8A020 !important; }
+  .barra-red { background: #DC3545 !important; }
+  #indicadores-obs { font-size: 8pt !important; padding: 5pt 8pt !important; margin-top: 5pt !important; background: #F3F0F8 !important; border-left: 2pt solid #ccc !important; }
+
+  .fase-badge {
+    background: #EAD7FF !important;
+    border: 1pt solid #8B5CC8 !important;
+    color: #4E2A7A !important;
+    padding: 5pt 9pt !important;
+    font-size: 9pt !important;
+    border-radius: 4pt !important;
+  }
+
+  /* ── Áreas ──────────────────────────────────────────────── */
+  /* Una columna para que cada tarjeta fluya y llene la página
+     (en dos columnas el bloque salta entero y deja huecos). */
+  #areas-container { display: block !important; }
+  .area-card { border-radius: 5pt !important; padding: 10pt !important; border: 1pt solid #ccc !important; margin-bottom: 8pt !important; }
+  .area-titulo { font-size: 10.5pt !important; }
+  .area-descripcion { font-size: 8pt !important; }
+  .stat-num { font-size: 12pt !important; }
+  .stat-lbl { font-size: 6pt !important; }
+  .area-stat { padding: 3pt 6pt !important; background: #F3F0F8 !important; border-radius: 4pt !important; }
+  .area-card li { font-size: 8.5pt !important; }
+  .area-proyeccion { padding: 5pt 8pt !important; font-size: 8pt !important; background: #F5EEFF !important; }
+
+  /* ── Avances y retos ────────────────────────────────────── */
+  .avances-retos-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8pt !important; }
+  .avances-col { background: #E6F8F1 !important; border: 1pt solid #b3e8d4 !important; padding: 9pt !important; border-radius: 4pt; }
+  .retos-col   { background: #FEF6E6 !important; border: 1pt solid #f5d99a !important; padding: 9pt !important; border-radius: 4pt; }
+  .item-avance, .item-reto { font-size: 8.5pt !important; padding: 2pt 0 !important; }
+
+  /* ── Novedades ──────────────────────────────────────────── */
+  .novedad-item { background: #FCEDF5 !important; border: 1pt solid #f5c6e4 !important; padding: 5pt 8pt !important; font-size: 8.5pt !important; margin-bottom: 4pt !important; }
+
+  /* ── Horarios ───────────────────────────────────────────── */
+  .horarios-stat { background: #E6F8F1 !important; border: 1pt solid #b3e8d4 !important; padding: 5pt 9pt !important; }
+  .horarios-pct { font-size: 11pt !important; }
+
+  /* ── Evidencias ─────────────────────────────────────────── */
+  #evidencias-grid { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 6pt !important; }
+  .evidencia-card { background: #F3F0F8 !important; border: 1pt solid #ccc !important; padding: 7pt 9pt !important; border-radius: 4pt !important; }
+  .evidencia-nombre { font-size: 8.5pt !important; }
+  .evidencia-desc   { font-size: 7.5pt !important; }
+  .estado-badge { font-size: 6pt !important; padding: 1pt 5pt !important; }
+  .estado-ok      { background: #E6F8F1 !important; color: #2EAA71 !important; border: 1pt solid #b3e8d4 !important; }
+  .estado-proceso { background: #E6F4FB !important; color: #4DA6D6 !important; border: 1pt solid #b5dcf0 !important; }
+  .estado-pendiente { background: #FEF6E6 !important; color: #E8A020 !important; border: 1pt solid #f5d99a !important; }
+
+  /* ── Recomendaciones ────────────────────────────────────── */
+  .recomendacion-item { padding: 6pt 9pt !important; border: 1pt solid #ccc !important; margin-bottom: 4pt !important; font-size: 9pt !important; break-inside: avoid; }
+  .rec-num { font-size: 10pt !important; color: #8B5CC8 !important; }
+
+  /* ── Comentarios ────────────────────────────────────────── */
+  #comentarios-texto { font-size: 9.5pt !important; }
+
+  /* ── Firmas / aprobación FSA ────────────────────────────── */
+  #sec-firmas { break-inside: avoid; }
+  #firmas-grid { display: block !important; margin-top: 6pt; }
+  .tabla-aprobacion-fsa { background: #fff !important; width: 100% !important; }
+  .tabla-aprobacion-fsa th,
+  .tabla-aprobacion-fsa td,
+  .firmas-plantilla-fsa,
+  .firma-box-fsa,
+  .firma-espacio-fsa,
+  .firma-footer-fsa { border-color: #111 !important; }
+  .firma-box-fsa { grid-template-rows: auto 90pt auto !important; break-inside: avoid; }
+  .tabla-aprobacion-fsa { break-inside: avoid; }
+
+  /* ── Control de saltos ──────────────────────────────────── */
+  /* Solo se mantienen completas las secciones cortas/críticas. */
+  #sec-indicadores, #sec-comentarios {
+    break-inside: avoid;
+  }
+}
