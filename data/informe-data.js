@@ -11,7 +11,7 @@ const INFORME_DATA = {
   coordinador: "",
   fase: "Procesos de Danzas y Porras: formación técnica y montaje coreográfico",
   indicadores: {
-    sesionesProgramadas: 0,
+    sesionesProgramadas: null,
     etiquetaSesiones: "Sesiones realizadas (septiembre)",
     sesionesRealizadas: 9,
     cumplimiento: "No comparable",
@@ -27,11 +27,11 @@ const INFORME_DATA = {
       },
       {
         titulo: "Asistencia y programación de septiembre",
-        texto: "En septiembre se reportaron 8 participantes en las sesiones de Danzas. Esta cifra corresponde a participación observada durante el mes y no modifica el listado institucional de personas inscritas. La fuente registra 0 sesiones programadas y 9 realizadas; por ello no se calcula un porcentaje de cumplimiento."
+        texto: "En septiembre se reportaron 8 participantes en las sesiones de Danzas. Esta cifra corresponde a participación observada durante el mes y no modifica el listado institucional de personas inscritas. Para el periodo no se recibió una programación consolidada de sesiones (el dato no fue registrado en la fuente, no significa que no se hayan programado clases); por ello no se calcula un porcentaje de cumplimiento. A partir de octubre se registrará la programación mensual para reportar el cumplimiento."
       }
     ]
   },
-  resumenEjecutivo: "Durante septiembre de 2026 se dio continuidad a dos procesos formativos de la Fundación San Antonio: Danzas con el grupo GMMMC y Porras con estudiantes del Colegio José Manuel María Camargo. En GMMMC/Danzas se realizaron 9 sesiones y 18 horas de atención, con 8 NNA participantes en el periodo; el seguimiento reporta 100 % de puntualidad docente y ningún cambio o contingencia. En Porras se realizaron 17 sesiones. El trabajo avanzó progresivamente en el montaje de las rutinas Junior y Juvenil, desde las posiciones iniciales y los grupos acrobáticos hasta el avance cercano al 100 % de la rutina Junior al cierre del mes; Juvenil continuó avanzando en su montaje. Los listados institucionales del segundo semestre se mantienen: 11 NNA inscritos en Danzas y 41 en Porras. Estas cifras de inscripción no representan asistencia mensual y los datos de participación de GMMMC/Danzas no se atribuyen al grupo de Porras.",
+  resumenEjecutivo: "Durante septiembre de 2026 se dio continuidad a dos procesos formativos de la Fundación San Antonio con estudiantes del Gimnasio Monseñor Manuel María Camargo (GMMMC): Danzas y Porras. En Danzas se realizaron 9 sesiones y 18 horas de atención, con 8 NNA participantes en el periodo; el seguimiento reporta 100 % de puntualidad docente y ningún cambio o contingencia. En Porras se realizaron 17 sesiones. El trabajo avanzó progresivamente en el montaje de las rutinas Junior y Juvenil, desde las posiciones iniciales y los grupos acrobáticos hasta el avance cercano al 100 % de la rutina Junior al cierre del mes; Juvenil continuó avanzando en su montaje. Los listados institucionales del segundo semestre se mantienen: 11 NNA inscritos en Danzas y 41 en Porras. Estas cifras de inscripción no representan asistencia mensual y los datos de participación de Danzas no se atribuyen al grupo de Porras.",
   avances: [
     "Mayor control y fortalecimiento del core mediante ejercicios dinámicos y progresivos.",
     "Progreso en la comprensión y ejecución técnica de los giros, con incorporación del plié como preparación y apoyo para el control del movimiento.",
@@ -51,9 +51,9 @@ const INFORME_DATA = {
     "Durante el mes se revisaron ejercicios de periodos anteriores y se ajustaron progresivamente para responder al nivel de incorporación del grupo.",
     "Se introdujo rock and roll desde sus pasos básicos hasta una frase coreográfica corta, integrando técnica, ritmo, coordinación y memoria corporal.",
     "Se realizaron 9 sesiones de Danzas y se reportaron 8 participantes durante el periodo. Este dato mensual se presenta por separado del listado semestral de inscritos.",
-    "En GMMMC/Danzas se realizaron 9 sesiones; en Porras del Colegio José Manuel María Camargo se realizaron 17 sesiones durante septiembre.",
-    "En GMMMC/Danzas no se reportaron contingencias, sustituciones ni cambios de docente durante septiembre.",
-    "El proceso de Porras corresponde al Colegio José Manuel María Camargo y se presenta separado de los indicadores de GMMMC/Danzas.",
+    "En Danzas se realizaron 9 sesiones; en Porras se realizaron 17 sesiones durante septiembre.",
+    "En Danzas no se reportaron contingencias, sustituciones ni cambios de docente durante septiembre.",
+    "Los procesos de Danzas y Porras del GMMMC se reportan por separado, cada uno con sus propios indicadores.",
     "El informe de septiembre de Porras está fechado el 26 de septiembre y corresponde a la docente Natalia Moreno."
   ],
   procesosPorArea: [
@@ -77,7 +77,7 @@ const INFORME_DATA = {
       cumplimiento: "No comparable"
     },
     {
-      area: "Porras · Colegio José Manuel María Camargo", icono: "🎀", color: "#D43B8A",
+      area: "Porras", icono: "🎀", color: "#D43B8A",
       descripcion: "Durante septiembre se realizaron 17 sesiones. El proceso de los grupos Junior y Juvenil avanzó desde el acondicionamiento y la construcción de posiciones y grupos acrobáticos hacia el montaje de las posiciones #3 y #4, los saltos, las marcaciones y el repaso de las rutinas. Al 26 de septiembre, Junior reportó un avance cercano al 100 % de su rutina; Juvenil continuaba avanzando en su construcción. El informe mensual docente de Natalia Moreno, fechado el 26 de septiembre, resume el trabajo de acondicionamiento físico para la nueva rutina, circuitos de fuerza y resistencia, memoria muscular, nuevos elementos de gimnasia y construcción de rutinas para su ejecución al cierre de las clases extracurriculares. El listado institucional del segundo semestre registra 41 NNA inscritos en Porras; esa cifra corresponde a inscripción, no a asistencia mensual.",
       sesionesProgramadas: "No reportado", sesionesRealizadas: 17, participantes: 41, etiquetaParticipantes: "NNA inscritos (segundo semestre)",
       avances: [
@@ -103,17 +103,17 @@ const INFORME_DATA = {
   cumplimientoHorarios: {
     descripcion: "Durante septiembre se registraron 15 controles de puntualidad docente, todos reportados dentro del horario correspondiente, para un resultado del 100 %. No se registraron contingencias, sustituciones ni cambios de docente durante el periodo.",
     porcentajeAsistenciaDocentes: "100%",
-    observaciones: "Los indicadores de asistencia, puntualidad y evidencias del consolidado corresponden a GMMMC/Danzas y no deben atribuirse a Porras del Colegio José Manuel María Camargo. Para Porras se reportan 17 sesiones realizadas y se cuenta con el informe mensual docente de Natalia Moreno, fechado el 26 de septiembre. No se dispone del total de asistentes, sesiones programadas, horas ejecutadas ni puntualidad de Porras; estos indicadores permanecen sin cuantificar."
+    observaciones: "Los indicadores de asistencia, puntualidad y evidencias del consolidado corresponden a Danzas y no deben atribuirse a Porras. Para Porras se reportan 17 sesiones realizadas y se cuenta con el informe mensual docente de Natalia Moreno, fechado el 26 de septiembre. Para Porras, durante septiembre el seguimiento se consolidó a través del informe docente y la bitácora de sesiones, pero la asistencia por sesión, la programación y los controles de puntualidad no se registraron todavía en la plataforma digital de seguimiento. Por esa razón estos indicadores no se presentan cuantificados en este informe. Como acción de mejora, desde octubre Porras registrará asistencia, puntualidad y horas en la misma plataforma usada por Danzas, para reportarlos con el mismo nivel de detalle."
   },
   tableroUrl: "",
   tableroTitulo: "Tablero de seguimiento GMMMC 2026",
   evidencias: [
-    { nombre: "Galería de fotos del periodo", descripcion: "38 registros de galería o evidencias del proceso de septiembre. Inicia sesión para ver las imágenes cargadas en Firebase.", url: "", estado: "Disponible", tipo: "galería", fuente: "fotos" },
+    { nombre: "Galería de fotos del periodo", descripcion: "Registros fotográficos del proceso de septiembre. Inicia sesión con un correo autorizado para ver las imágenes del mes.", url: "", estado: "Disponible", tipo: "galería", fuente: "fotos" },
     { nombre: "Registros de asistencia", descripcion: "9 registros de asistencia correspondientes al periodo de septiembre.", url: "", estado: "Disponible", tipo: "asistencia", fuente: "asistencias" },
     { nombre: "Registros de puntualidad", descripcion: "15 controles de puntualidad docente, todos reportados dentro del horario (100 %).", url: "", estado: "Disponible", tipo: "registro", fuente: "puntualidad" },
-    { nombre: "Seguimiento docente de GMMMC/Danzas", descripcion: "Registros docentes y pedagógicos del consolidado de septiembre de GMMMC/Danzas.", url: "", estado: "Disponible", tipo: "registro", fuente: "bitacoras" },
-    { nombre: "Informe mensual docente de GMMMC/Danzas", descripcion: "2 informes mensuales docentes en el consolidado de septiembre de GMMMC/Danzas.", url: "", estado: "Disponible", tipo: "carpeta", fuente: "informes" },
-    { nombre: "Seguimiento de Porras · Colegio José Manuel María Camargo", descripcion: "Seguimiento diferenciado de las rutinas Junior y Juvenil; 17 sesiones realizadas durante septiembre.", url: "", estado: "Disponible", tipo: "registro", fuente: "bitacoras" },
+    { nombre: "Seguimiento docente de Danzas", descripcion: "Registros docentes y pedagógicos del consolidado de septiembre de Danzas.", url: "", estado: "Disponible", tipo: "registro", fuente: "bitacoras" },
+    { nombre: "Informe mensual docente de Danzas", descripcion: "2 informes mensuales docentes en el consolidado de septiembre de Danzas.", url: "", estado: "Disponible", tipo: "carpeta", fuente: "informes" },
+    { nombre: "Seguimiento de Porras", descripcion: "Seguimiento diferenciado de las rutinas Junior y Juvenil; 17 sesiones realizadas durante septiembre.", url: "", estado: "Disponible", tipo: "registro", fuente: "bitacoras" },
     { nombre: "Informe mensual de Porras · Natalia Moreno", descripcion: "Informe docente fechado el 26 de septiembre de 2026 sobre acondicionamiento, gimnasia y construcción de rutinas Junior y Juvenil.", url: "", estado: "Disponible", tipo: "carpeta", fuente: "informes" }
   ],
   recomendaciones: [
@@ -123,10 +123,10 @@ const INFORME_DATA = {
     "Retomar y profundizar los ejercicios de disociación corporal, flexibilidad, coordinación y concentración.",
     "Continuar el fortalecimiento del core e incrementar gradualmente la dificultad según la respuesta del grupo.",
     "Desarrollar secuencias coreográficas que integren técnica, ritmo, memoria corporal y musicalidad.",
-    "Mantener el registro sistemático de ambos procesos y conservar diferenciadas las asistencias, bitácoras e indicadores de GMMMC/Danzas y Porras del Colegio José Manuel María Camargo.",
+    "Mantener el registro sistemático de ambos procesos y conservar diferenciadas las asistencias, bitácoras e indicadores de Danzas y Porras.",
     "En Porras, finalizar el montaje de Junior y Juvenil, reforzar limpieza y simetría técnica, y atender el impacto de las ausencias en posiciones y grupos acrobáticos."
   ],
-  comentariosFinales: "El balance de septiembre de 2026 recoge avances complementarios en dos procesos que se reportan por separado. En GMMMC/Danzas se realizaron 9 sesiones y 18 horas de atención, con 8 participantes reportadas para el periodo; se avanzó en core, giros, plié, ritmo y rock and roll, y se mantiene como reto la interiorización del pulso y la orientación espacial. En Porras del Colegio José Manuel María Camargo se realizaron 17 sesiones. El seguimiento mensual y el informe docente registran una progresión sostenida en los grupos Junior y Juvenil: Junior alcanzó un avance cercano al 100 % de su rutina al 26 de septiembre, mientras Juvenil continuó en construcción. La ausencia de algunas estudiantes dificultó el montaje de posiciones y grupos acrobáticos. Las cifras institucionales del segundo semestre se mantienen en 11 NNA inscritos en Danzas y 41 en Porras; no equivalen a la asistencia mensual. Los indicadores de puntualidad y asistencia de GMMMC/Danzas no se extrapolan al proceso de Porras.",
+  comentariosFinales: "El balance de septiembre de 2026 recoge avances complementarios en dos procesos que se reportan por separado. En Danzas se realizaron 9 sesiones y 18 horas de atención, con 8 participantes reportadas para el periodo; se avanzó en core, giros, plié, ritmo y rock and roll, y se mantiene como reto la interiorización del pulso y la orientación espacial. En Porras se realizaron 17 sesiones. El seguimiento mensual y el informe docente registran una progresión sostenida en los grupos Junior y Juvenil: Junior alcanzó un avance cercano al 100 % de su rutina al 26 de septiembre, mientras Juvenil continuó en construcción. La ausencia de algunas estudiantes dificultó el montaje de posiciones y grupos acrobáticos. Las cifras institucionales del segundo semestre se mantienen en 11 NNA inscritos en Danzas y 41 en Porras; no equivalen a la asistencia mensual. Los indicadores de puntualidad y asistencia de Danzas no se extrapolan al proceso de Porras.",
   firmas: [
     { cargo: "Coordinación Musicala", nombre: "Jimmy Alexander Caballero Moreno", fecha: "Bogotá, septiembre de 2026" },
     { cargo: "Docente - Porras", nombre: "Natalia Moreno", fecha: "Bogotá, septiembre de 2026" },
