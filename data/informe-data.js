@@ -26,8 +26,8 @@ const INFORME_DATA = {
         texto: "El listado institucional registra 11 NNA inscritos en Danzas y 41 en Porras: 52 NNA distintos en total. Estas cifras corresponden a inscripción y se mantienen como el listado institucional para el segundo semestre; no son un acumulado de asistencias mensuales."
       },
       {
-        titulo: "Asistencia y programación de septiembre",
-        texto: "En septiembre se reportaron 8 participantes en las sesiones de Danzas. Esta cifra corresponde a participación observada durante el mes y no modifica el listado institucional de personas inscritas. Para el periodo no se recibió una programación consolidada de sesiones (el dato no fue registrado en la fuente, no significa que no se hayan programado clases); por ello no se calcula un porcentaje de cumplimiento. A partir de octubre se registrará la programación mensual para reportar el cumplimiento."
+        titulo: "Participación de septiembre",
+        texto: "En septiembre se reportaron 8 participantes en las sesiones de Danzas. Esta cifra corresponde a participación observada durante el mes y no modifica el listado institucional de personas inscritas."
       }
     ]
   },
@@ -103,7 +103,7 @@ const INFORME_DATA = {
   cumplimientoHorarios: {
     descripcion: "Durante septiembre se registraron 15 controles de puntualidad docente, todos reportados dentro del horario correspondiente, para un resultado del 100 %. No se registraron contingencias, sustituciones ni cambios de docente durante el periodo.",
     porcentajeAsistenciaDocentes: "100%",
-    observaciones: "Los indicadores de asistencia, puntualidad y evidencias del consolidado corresponden a Danzas y no deben atribuirse a Porras. Para Porras se reportan 17 sesiones realizadas y se cuenta con el informe mensual docente de Natalia Moreno, fechado el 26 de septiembre. Para Porras, durante septiembre el seguimiento se consolidó a través del informe docente y la bitácora de sesiones, pero la asistencia por sesión, la programación y los controles de puntualidad no se registraron todavía en la plataforma digital de seguimiento. Por esa razón estos indicadores no se presentan cuantificados en este informe. Como acción de mejora, desde octubre Porras registrará asistencia, puntualidad y horas en la misma plataforma usada por Danzas, para reportarlos con el mismo nivel de detalle."
+    observaciones: "Los indicadores de asistencia, puntualidad y evidencias del consolidado corresponden a Danzas y no deben atribuirse a Porras. Para Porras se reportan 17 sesiones realizadas y se cuenta con el informe mensual docente de Natalia Moreno, fechado el 26 de septiembre."
   },
   tableroUrl: "",
   tableroTitulo: "Tablero de seguimiento GMMMC 2026",
